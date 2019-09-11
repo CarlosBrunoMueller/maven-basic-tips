@@ -8,9 +8,9 @@ para termos projetos mais enxutos e uma maior agilidade para atuar no nosso trab
 
 ## Disclaimer
 
-Possívelmente o que você vai encontrar neste repositório já é de seu conhecimento, se você já trabalha com Maven / Java.
+Possívelmente o que você vai encontrar neste repositório já é de seu conhecimento, principalmente se você já trabalha com Maven / Java.
 
-Mas vale a visita para relembrar alguns assuntos.
+Mas vale a visita para relembrar alguns assuntos importantes que fazem a diferença.
 
 ## Contribuição
 
@@ -26,10 +26,12 @@ Somente lembrando de sempre documentar via comentário o que foi adicionado ao p
 - Fazendo deploy da sua aplicação direto WebServer
 - Somente "Maven Clean Install" ?
 - Repositório central maven
+- Mojo - Customização
+- Ant Tasks
 
 ## Artefatos do repositório
 
-Criamos um projeto básico com estrutura de parent e algumas depedências / plugins, para demonstrar os tópicos citdos acima.
+Criamos um projeto básico com estrutura de parent e algumas depedências / plugins, para demonstrar os tópicos citados acima.
 
 Todas alterações possuem comentários explicando o que foi citado na conversa.
 
