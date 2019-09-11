@@ -37,7 +37,7 @@ Todas alterações possuem comentários explicando o que foi citado na conversa.
 
 ## Acompanhe
 
-Para mais projetos como este, e outras coisas peripécias quue apronto na área de DEV acompanhe:
+Para mais projetos como este, e outras peripécias que apronto na área de DEV, acompanhe:
 
 <https://github.com/CarlosBrunoMueller>
 
