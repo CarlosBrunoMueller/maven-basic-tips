@@ -1,0 +1,66 @@
+Este arquivo irá armazenar os comandos mais utilizados do maven, de acordo com o "scope" requerido:
+
+mvn compile 
+==================================================
+Fases de execução:
+- compile
+
+- Este comando somente compila o projeto em questão. 
+- Normalmente utilizado para testar escopo / uso de depêdencias, sem necessariamente rodar os testes unitários por exemplo.
+
+mvn package
+==================================================
+Fases de execução:
+- compile
+- package
+
+- Comandos utilizado para gerar os artefatos do projeto em questão.
+- Muito utilizado quando você já sabe que o projeto compila corretamente, mas você quer gerar somente os artefatos.
+
+
+mvn test
+==================================================
+Fases de execução:
+- compile
+- test
+
+- Comando utilizado para rodar os testes unitários do projeto.
+- Este comando não ira gerar artefatos.
+
+
+mvn clean 
+==================================================
+
+Limpa a pasta target do projeto
+
+
+mvn clean install
+==================================================
+Fases de execução:
+- clean
+- compile
+- test
+- install
+
+- Comando mais utilizado normalmente, ele irá por todo o ciclo de escopos, e por irá instalar as depêdencias no repositórios local
+- Também irá instalar os artefatos no WebServer por exemplo se configurado
+
+mvn clean install -DskipTests
+==================================================
+Fases de execução:
+- clean
+- compile
+- test ***skip
+- install
+
+- Semelhante ao anterior mais pula a fase de teste unitários. 
+
+
+
+
+
+
+
+
+
+

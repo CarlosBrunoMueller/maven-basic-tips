@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Identifca o Grupo gerador deste projeto -->
+	<groupId>com.mueller</groupId>
+
+	<!-- Artefato maven, boa prática utilizar o mesmo nome do projeto -->
+	<artifactId>mingle-basic-tips</artifactId>
+
+	<!-- Tag Packaging utilizada para identificar qual será o artefato gerado 
+		por este projeto Jar War EJB -->
+	<packaging>war</packaging>
+
+	<!-- Versão do Projeto gerado, pode ou não herdar a versão do projeto parent -->
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- Nome da Aplicação -->
+	<name>Maven Basic Tips WebAPP</name>
+
+	<dependencies>
+
+		<!-- Test -->
+		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
+			somente durante a fase de teste. Não gera esta dependencia como artefato -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Compile -->
+		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
+			somente durante a fase de compilação. Não gera esta dependencia como artefato. -->
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-ws-core</artifactId>
+			<version>2.4.0.RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Provided -->
+		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
+			para compilação, e também serão precisas para run-time mas alguem irá prover 
+			na common-lib de runtime. Não gera esta depencia como artefato -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Runtime -->
+		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
+			para compilação, e também serão precisas para run-time. Irá gerar o artefato 
+			na common-lib do war -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+			<version>2.4.3</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- System -->
+		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
+			para compilação, e também serão precisas para run-time. Diferente da provided, 
+			quem irá fornecer está depedência será especificamente a JVM. Não gera esta 
+			dependencia como artefato -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+
+		<!-- Sem Scope -->
+		<!-- Quando não é informado Scope, a depedência estará presentes em todas 
+			as fases do maven Irá gerar o artefato na common-lib do war -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.3.6</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<!-- Nome do artefato físico gerado em disco, no caso mingle-basic-tips.war -->
+		<finalName>mingle-basic-tips</finalName>
+		<plugins>
+			<!-- Plugin utilizado para fase install do maven, indicando qual o webserver 
+				estou utilizando para instalar diretamente, sempre precisar de cópia manual -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<echo>Copyng War para TOMCAT</echo>
+								<copy
+									file="${project.build.directory}/${project.artifactId}.war"
+									tofile="${webapps.target}/mingle-basic-tips.war" verbose="true" />
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
