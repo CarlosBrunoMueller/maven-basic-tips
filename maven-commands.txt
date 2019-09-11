@@ -33,7 +33,6 @@ mvn clean
 
 Limpa a pasta target do projeto
 
-
 mvn clean install
 ==================================================
 Fases de execução:
@@ -54,6 +53,21 @@ Fases de execução:
 - install
 
 - Semelhante ao anterior mais pula a fase de teste unitários. 
+
+
+******************* EXTRAS ***********************
+
+
+mvn dependency:analyze
+==================================================
+
+- Maven analisará o código do projeto para identificar dependências não usadas.
+
+
+mvn dependency:purge-local-repository
+==================================================
+
+- Esse código limpará e, em seguida, fará o download automaticamente de todas as dependências do projeto atual.
 
 
 
