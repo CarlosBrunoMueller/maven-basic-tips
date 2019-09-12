@@ -7,10 +7,14 @@
 	<groupId>com.mueller</groupId>
 
 	<!-- Artefato maven, boa prática utilizar o mesmo nome do projeto -->
-	<artifactId>mingle-basic-tips</artifactId>
+	<artifactId>maven-basic-tips</artifactId>
 
 	<!-- Tag Packaging utilizada para identificar qual será o artefato gerado 
-		por este projeto Jar War EJB -->
+		por este projeto 
+		Jar 
+		War 
+		EJB
+		POM -->
 	<packaging>war</packaging>
 
 	<!-- Versão do Projeto gerado, pode ou não herdar a versão do projeto parent -->
@@ -23,7 +27,8 @@
 
 		<!-- Test -->
 		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
-			somente durante a fase de teste. Não gera esta dependencia como artefato -->
+			somente durante a fase de teste. 
+			Não gera esta dependencia como artefato -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -33,7 +38,8 @@
 
 		<!-- Compile -->
 		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
-			somente durante a fase de compilação. Não gera esta dependencia como artefato. -->
+			somente durante a fase de compilação. 
+			Não gera esta dependencia como artefato. -->
 		<dependency>
 			<groupId>org.springframework.ws</groupId>
 			<artifactId>spring-ws-core</artifactId>
@@ -44,7 +50,8 @@
 		<!-- Provided -->
 		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
 			para compilação, e também serão precisas para run-time mas alguem irá prover 
-			na common-lib de runtime. Não gera esta depencia como artefato -->
+			na common-lib de runtime. 
+			Não gera esta depencia como artefato -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -54,8 +61,8 @@
 
 		<!-- Runtime -->
 		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
-			para compilação, e também serão precisas para run-time. Irá gerar o artefato 
-			na common-lib do war -->
+			para compilação, e também serão precisas para run-time. 
+			Irá gerar o artefato na common-lib do war -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-pool2</artifactId>
@@ -66,8 +73,8 @@
 		<!-- System -->
 		<!-- Este Scope é utilizado para adicionarmos depências que serão utilizadas 
 			para compilação, e também serão precisas para run-time. Diferente da provided, 
-			quem irá fornecer está depedência será especificamente a JVM. Não gera esta 
-			dependencia como artefato -->
+			quem irá fornecer está depedência será especificamente a JVM. 
+			Não gera esta dependencia como artefato -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
@@ -77,7 +84,8 @@
 
 		<!-- Sem Scope -->
 		<!-- Quando não é informado Scope, a depedência estará presentes em todas 
-			as fases do maven Irá gerar o artefato na common-lib do war -->
+			as fases do maven 
+			Irá gerar o artefato na common-lib do war -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpmime</artifactId>
@@ -87,8 +95,8 @@
 	</dependencies>
 
 	<build>
-		<!-- Nome do artefato físico gerado em disco, no caso mingle-basic-tips.war -->
-		<finalName>mingle-basic-tips</finalName>
+		<!-- Nome do artefato físico gerado em disco, no caso maven-basic-tips.war -->
+		<finalName>maven-basic-tips</finalName>
 		<plugins>
 			<!-- Plugin utilizado para fase install do maven, indicando qual o webserver 
 				estou utilizando para instalar diretamente, sempre precisar de cópia manual -->

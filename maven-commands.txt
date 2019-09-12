@@ -17,7 +17,6 @@ Fases de execução:
 - Comandos utilizado para gerar os artefatos do projeto em questão.
 - Muito utilizado quando você já sabe que o projeto compila corretamente, mas você quer gerar somente os artefatos.
 
-
 mvn test
 ==================================================
 Fases de execução:
